@@ -6,8 +6,9 @@ import "./App.css";
 
 import { Navbar, Sidebar, Footer, ThemeSettings } from "./components";
 import { Ecommerce } from "./pages";
+import { useStateContext } from "./context/ContextProvider";
 const App = () => {
-  const [activeMenu, setActiveMenu] = useState(true);
+  const { activeMenu } = useStateContext();
   return (
     <div>
       <BrowserRouter>
