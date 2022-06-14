@@ -5,7 +5,16 @@ import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import "./App.css";
 
 import { Navbar, Sidebar, Footer, ThemeSettings } from "./components";
-import { Ecommerce } from "./pages";
+import {
+  Ecommerce,
+  Orders,
+  Employees,
+  Customers,
+  Calendar,
+  Kanban,
+  Editor,
+  ColorPicker,
+} from "./pages";
 import { useStateContext } from "./context/ContextProvider";
 const App = () => {
   const { activeMenu } = useStateContext();
@@ -43,19 +52,20 @@ const App = () => {
             </div>
 
             <div>
+              <ThemeSettings />
               <Routes>
                 {/* Dashboard */}
                 <Route path="/" element={<Ecommerce />} />
                 <Route path="/ecommerce" element={<Ecommerce />} />
                 {/* Pages */}
-                <Route path="/orders" element="orders" />
-                <Route path="/employees" element="employees" />
-                <Route path="/customers" element="customers" />
+                <Route path="/orders" element={<Orders />} />
+                <Route path="/employees" element={<Employees />} />
+                <Route path="/customers" element={<Customers />} />
                 {/* Apps */}
-                <Route path="/kanban" element="kanban" />
-                <Route path="/editor" element="editor" />
-                <Route path="/calendar" element="calendar" />
-                <Route path="/color-picker" element="color-picker" />
+                <Route path="/kanban" element={<Kanban />} />
+                <Route path="/editor" element={<Editor />} />
+                <Route path="/calendar" element={<Calendar />} />
+                <Route path="/color-picker" element={<ColorPicker />} />
                 {/* Charts */}
                 <Route path="/line" element="line" />
                 <Route path="/area" element="area" />
