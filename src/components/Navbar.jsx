@@ -68,12 +68,12 @@ const Navbar = () => {
       />
 
       <div className="flex">
-        <NavButton
+        {/* <NavButton
           title="Cart"
           customFun={() => handleClick("Cart")}
           color={currentColor}
           icon={<FiShoppingCart />}
-        />
+        /> */}
         <NavButton
           title="Chat"
           customFun={() => handleClick("Chat")}
