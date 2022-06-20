@@ -28,6 +28,7 @@ const NavButton = ({ title, customFun, icon, color, dotColor }) => (
 
 const Navbar = () => {
   const {
+    currentColor,
     activeMenu,
     setActiveMenu,
     isClicked,
@@ -57,12 +58,11 @@ const Navbar = () => {
   }, [screenSize]);
 
   return (
-    <div className="flex items-center justify-between md:mx-6 p-2 relative">
+    <div className="flex items-center justify-between md:ml-6 md:mr-6 p-2 relative">
       <NavButton
         title="Menu"
         customFun={() => setActiveMenu((prev) => !prev)}
-        color="blue"
-        dotColor="red"
+        color={currentColor}
         icon={<AiOutlineMenu />}
         className="md:hidde"
       />
@@ -70,23 +70,22 @@ const Navbar = () => {
       <div className="flex">
         <NavButton
           title="Cart"
-          customFun={() => handleClick("cart")}
-          color="blue"
-          dotColor="red"
+          customFun={() => handleClick("Cart")}
+          color={currentColor}
           icon={<FiShoppingCart />}
         />
         <NavButton
           title="Chat"
-          customFun={() => handleClick("chat")}
-          color="blue"
-          dotColor="#03C9D7"
+          customFun={() => handleClick("Chat")}
+          color={currentColor}
+          dotColor={currentColor}
           icon={<BsChatLeft />}
         />
         <NavButton
           title="Notifications"
-          customFun={() => handleClick("notifications")}
-          color="blue"
-          dotColor="#03C9D7"
+          customFun={() => handleClick("Notifications")}
+          color={currentColor}
+          dotColor={currentColor}
           icon={<RiNotification3Line />}
         />
         <TooltipComponent content="Profile" position="BottomCenter">
@@ -105,9 +104,9 @@ const Navbar = () => {
           </div>
         </TooltipComponent>
 
-        {isClicked.cart && <Cart />}
-        {isClicked.chat && <Chat />}
-        {isClicked.notifications && <Notification />}
+        {isClicked.Cart && <Cart />}
+        {isClicked.Chat && <Chat />}
+        {isClicked.Notifications && <Notification />}
         {isClicked.userProfile && <UserProfile />}
       </div>
     </div>
